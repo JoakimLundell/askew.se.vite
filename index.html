@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed&display=swap" rel="stylesheet"> 
+    
+    <link rel="stylesheet" href="./src/assets/css/normalize.css">
+    <style>
+      :root {
+        --header: 40px;
+        --header-color: rgb(22,22,22);
+        --header-background: rgb(22,22,22);
+        --menu: 50px;
+        --background: #dac5aa;
+        --black: rgb(22,22,22);
+        --white: #fff;
+        --dark-red: #c60c0f;
+        --red: #e30713; 
+        --red-hover: #4e0304;
+        --accent-color: #00586c;
+        --accent-color: #346d92;
+        --accent-color-hover: #477492;
+        --accent-color-light: #346c92bb;
+
+        --padding: 12px;
+        --padding-small: 6px;
+        --border-radius: 6px;
+        --icon: 60px;
+      }
+
+      html, body {
+        margin: 0;
+        background-color: var(--background);
+        box-sizing: border-box;
+        font-family: 'Roboto';
+      }
+
+      a {text-decoration: none; color:var(--dark-red)}
+      a:hover { color: var(--red);
+      }
+
+      input {
+        padding: var(--padding-small);
+        margin: var(--padding-small) 0;
+      }
+
+      button {
+        padding: 8px 12px;
+        background-color: var(--accent-color);
+        border-radius: var(--border-radius);
+        border: none;
+        font-size: .8rem;
+        color: var(--white);
+        cursor: pointer;
+        height: 30px;
+        transition: background-color .5s ease;
+      }
+      button:hover {
+        background-color: var(--accent-color-hover);
+        transition: background-color .5s ease;
+      }
+
+      button.warning {
+        background-color: var(--dark-red);
+      }
+      button.warning:hover {
+        background-color: var(--red);
+      }
+
+      button:disabled,
+      button.warning:disabled {
+        opacity:0.3;
+        cursor: not-allowed;
+      }
+
+      button.small {
+        font-family: 'Roboto Condensed';
+        font-size: 10px;
+        padding: 2px 4px;
+      }
+
+      h1, h2, h3, h4 {
+        font-family: 'Roboto Condensed', sans-serif;
+        font-weight: normal;
+        color: var(--black)
+      }
+
+      h1 {
+        margin: 0;
+      }
+      h3 {
+        font-size: 16px;
+      }
+
+      h1, h2, h3 {
+        margin: 4px 0 2px 0;
+      }
+
+      .big-text {
+        font-size: 4rem;
+      }
+
+      .desktop {
+        display: none;
+      }
+
+      /* For leafler icon */
+      .greyedOut {
+		    filter:grayscale(100%) opacity(90%);
+	    }
+      
+
+      @media only screen and (min-width: 600px) {
+        :root {
+          --header: 40px;
+          --padding: 60px;
+          --padding-small: 6px;
+        }
+
+        .desktop {
+          display: inline;
+        }
+        
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+       
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

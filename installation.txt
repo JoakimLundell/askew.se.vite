@@ -1,0 +1,101 @@
+# Install Vite and Vue
+
+$ npm init @vitejs/app <project-name>
+$ cd <project-name>
+$ npm install
+$ npm run dev
+
+
+# Add Vue Router
+
+$npm install vue-router@4
+
+Create a router folder and add router.js containing
+
+    import { createRouter, createWebHashHistory} from 'vue-router'
+
+    import Home from '../pages/Home.vue';
+
+    const routes = [
+        {path: '/', component: Home}
+    ]
+
+    const router = createRouter({
+        history: createWebHashHistory(),
+        routes: routes,
+    })
+
+    export default router;
+
+
+Import it in main.js and use it
+    
+    import router from './router/router.js'
+
+    createApp(App).use(router).mount('#app')
+
+
+# Add Vuex
+
+$ npm install vuex@next --save
+
+Add a store folder with a index.js file containing 
+
+    import { createStore } from 'vuex'
+
+    import auth from '../store/modules/auth.js'
+
+    const store = createStore({
+        modules: {
+            auth
+        }
+    })
+
+    export default store
+
+Import it in main.js and use
+
+    import store from './store/index.js'
+
+    createApp(App).use(router).use(store).mount('#app')
+
+
+# Add firebase
+$ npm install firebase --save
+
+Add a firebase folder with firebase.js file containing
+    import firebaseApp from 'firebase/app'
+    import 'firebase/auth'
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyDnbrcpmpergeZENH2u3k-fUtT5Kf4qjjo",
+        authDomain: "askew-server.firebaseapp.com",
+        databaseURL: "https://askew-server.firebaseio.com",
+        projectId: "askew-server",
+        storageBucket: "askew-server.appspot.com",
+        messagingSenderId: "856345091020"
+    }
+
+    const firebase = firebaseApp.initializeApp(firebaseConfig);
+    const auth = firebaseApp.auth();
+
+    export {
+        firebase, auth
+    }
+
+Import it
+
+
+Add Leaflet
+$ npm install leaflet vue2-leaflet --save
+Funkar inte
+$npm i -D @vue-leaflet/vue-leaflet
+
+
+Add Click outside?
+Fungerar ej $ npm install --save v-click-outside
+Skippad det och byggde det själv istället
+
+
+Add Moment
+npm install moment --save   # npm
